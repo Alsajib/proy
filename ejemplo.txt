@@ -1,0 +1,14 @@
+<?php
+
+require_once 'curl_access.php';
+
+$auth = new autorizacion("delegacion");
+
+$auth->Set_Filtro('?per_page=5&page=1');
+$jason_decode = $auth->Get_Respuesta_JasonDecode(true); 
+$jaso_encode = $auth->Get_Respuesta_Jason();
+
+print_r($jason_decode);
+//print_r($jaso_encode);
+
+?>
